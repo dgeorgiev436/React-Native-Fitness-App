@@ -1,15 +1,19 @@
-import { View, Text, Button } from "react-native"
+import { View, Text, StyleSheet } from "react-native"
 import { NativeStackHeaderProps } from "@react-navigation/native-stack"
+import data from "../data.json"
 
 export default function HomeScreen ({navigation}: NativeStackHeaderProps) {
 	
 	return(
-		<View>
+		<View style={styles.container}>
 			<Text>I am home screen</Text>
-			<Button 
-				title="Go to Planner"
-				onPress={() => navigation.push("Planner")} //On click go to PlannerScreen
-			/>
+			<Text>{ JSON.stringify(data) }</Text>
 		</View>
 	)
 }
+
+const styles = StyleSheet.create({
+	container: {
+		padding: 20
+	}
+})
